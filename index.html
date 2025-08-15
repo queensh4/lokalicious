@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lokalicious — Jajanan Nusantara</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/img/logo-lokalicious.svg" alt="Lokalicious logo" class="logo"/>
+        <span class="brand-name">Lokalicious</span>
+      </div>
+      <nav class="menu">
+        <a href="#produk">Produk</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#kritik">Kritik & Saran</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <button id="cartBtn" class="btn btn-ghost" aria-label="Buka keranjang">
+        🧺 <span id="cartCount" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Rayakan Rasa Nusantara</h1>
+        <p>Camilan lokal pilihan dengan sentuhan kekinian. Dari yang manis, gurih, sampai pedas—semua ada di sini.</p>
+        <a href="#produk" class="btn btn-primary">Lihat Produk</a>
+      </div>
+      <div class="hero-art">
+        <img src="assets/img/hero-snack-platter.svg" alt="Ilustrasi jajanan Nusantara"/>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Produk Terlaris Slider -->
+    <section id="produk" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Produk Terlaris</h2>
+          <p>Maksimal 5 item pilihan, siap masuk keranjang.</p>
+        </div>
+
+        <div class="slider-wrap">
+          <button class="slider-nav left" id="prevSlide" aria-label="Sebelumnya">‹</button>
+          <div class="slider" id="productSlider" tabindex="0" aria-label="Slider produk terlaris"></div>
+          <button class="slider-nav right" id="nextSlide" aria-label="Berikutnya">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Testimoni Pelanggan</h2>
+          <p>Kata mereka tentang Lokalicious.</p>
+        </div>
+        <div id="testimonialList" class="cards"></div>
+
+        <div class="card form-card">
+          <h3>Tulis Testimoni</h3>
+          <form id="testimonialForm">
+            <div class="grid-2">
+              <label>Nama
+                <input type="text" name="nama" placeholder="Nama Anda" required>
+              </label>
+              <label>Rating
+                <select name="rating" required>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="1">1</option>
+                </select>
+              </label>
+            </div>
+            <label>Pesan
+              <textarea name="pesan" rows="3" placeholder="Ceritakan pengalaman Anda" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Kirim Testimoni</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kritik & Saran -->
+    <section id="kritik" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kritik & Saran</h2>
+          <p>Kami senang mendengar masukan Anda untuk jadi lebih baik.</p>
+        </div>
+        <div class="card form-card">
+          <form id="feedbackForm">
+            <div class="grid-2">
+              <label>Nama
+                <input type="text" name="nama" placeholder="Nama Anda" required>
+              </label>
+              <label>Email
+                <input type="email" name="email" placeholder="email@contoh.com" required>
+              </label>
+            </div>
+            <label>Pesan
+              <textarea name="pesan" rows="4" placeholder="Tulis kritik/saran Anda..." required></textarea>
+            </label>
+            <button class="btn btn-outline" type="submit">Kirim Masukan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontak" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand">
+          <img src="assets/img/logo-lokalicious.svg" class="logo small" alt="Lokalicious"/>
+          <span class="brand-name">Lokalicious</span>
+        </div>
+        <p class="muted">Jajanan Nusantara yang #AsliEnak — dari UMKM lokal untukmu.</p>
+      </div>
+      <div>
+        <h4>Alamat Toko</h4>
+        <p>Jl. Riveside 56, Jakarta</p>
+      </div>
+      <div>
+        <h4>Hubungi Kami</h4>
+        <ul class="contact">
+          <li>Instagram: @lokalicious.id</li>
+          <li>WhatsApp: 08xx-xxxx-xxxx</li>
+          <li>Email: hello@lokalicious.id</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Lokalicious</span>
+      <button id="checkoutBtn" class="btn btn-accent">Checkout</button>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside id="cartDrawer" class="drawer" aria-hidden="true" aria-label="Keranjang belanja">
+    <div class="drawer-inner">
+      <header class="drawer-head">
+        <h3>Keranjang Belanja</h3>
+        <button id="closeCart" class="btn btn-ghost" aria-label="Tutup">✕</button>
+      </header>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="drawer-foot">
+        <div class="subtotal">Subtotal: <strong id="subtotal">Rp0</strong></div>
+        <button id="drawerCheckout" class="btn btn-accent">Checkout</button>
+      </div>
+    </div>
+    <div class="drawer-scrim" id="drawerScrim" tabindex="-1" aria-hidden="true"></div>
+  </aside>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

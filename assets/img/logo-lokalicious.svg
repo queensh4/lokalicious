@@ -1,0 +1,6 @@
+<svg width="180" height="48" viewBox="0 0 180 48" xmlns="http://www.w3.org/2000/svg">
+  <rect rx="12" width="180" height="48" fill="#2f7d32"/>
+  <text x="16" y="31" font-family="Poppins" font-size="22" font-weight="700" fill="#fff">Lokalicious</text>
+  <circle cx="164" cy="12" r="6" fill="#d94f2b"/>
+  <path d="M160 28c6-8 8-10 14-14" stroke="#fbf6ef" stroke-width="2" fill="none" stroke-linecap="round"/>
+</svg>
